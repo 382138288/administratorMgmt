@@ -12,7 +12,7 @@ angular.module('appModule')
         };
         $scope.sendKw = function () {
             $state.go('home.accountList',{kw:$scope.searchContent});
-        }
+        } 
     }])
     .config(['$stateProvider', '$urlRouterProvider',
         function ($stateProvider, $urlRouterProvider) {
