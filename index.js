@@ -14,7 +14,7 @@ angular.module('appModule', ['ngAnimate', 'ui.router', 'ngSanitize', 'pascalprec
                     templateUrl: './view/home/main.html'
                     }
                 })
-                .state('main.entry', {
+                .state('main.entry', { 
                     url: '/entry',
                     abstract: true,
                     views: {
