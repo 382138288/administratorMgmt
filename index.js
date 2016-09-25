@@ -3,24 +3,24 @@
  *
  * Description
  */
-angular.module('appModule', ['ngAnimate', 'ui.router', 'ngSanitize', 'pascalprecht.translate'])
+var appModule=angular.module('appModule', ['ngAnimate', 'ui.router']);
     //路由配置
-    .config(['$stateProvider', '$urlRouterProvider',
+    appModule.config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/home/main');
+            $urlRouterProvider.otherwise('/main/entry');
             $stateProvider.state('main', {
                     url: '/main',
-                    abstract: true,
-                    templateUrl: './view/home/main.html'
+                    views: {
+                        'viewMain': {
+                            templateUrl: './view/home/main.html'
+                        }
                     }
                 })
                 .state('main.entry', {
                     url: '/entry',
-                    abstract: true,
                     views: {
                         'homeMain': {
-                            templateUrl: './view/home/entry.html',
-                            controller: 'home.entryCtrl'
+                            templateUrl: './view/home/entry.html'
                         }
                     }
                 })

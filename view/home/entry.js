@@ -23,16 +23,3 @@ angular.module('appModule')
 
 
     }])
-    .config(['$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider) {
-            $stateProvider.state('home.entry', {
-                url: '/entry',
-                views: {
-                    'homeMain': {
-                        templateUrl: './view/home/entry.html',
-                        controller: 'home.entryCtrl'
-                    }
-                }
-            });
-        }
-    ]);
