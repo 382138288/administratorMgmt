@@ -8,23 +8,19 @@ angular.module('appModule', ['ngAnimate', 'ui.router', 'ngSanitize', 'pascalprec
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home/main');
-            $stateProvider.state('home', {
-                    url: '/home',
+            $stateProvider.state('main', {
+                    url: '/main',
                     abstract: true,
-                    views: {
-                        'viewMain': {
-                            templateUrl: './view/home/main.html',
-                            controller: 'homeCtrl'
-                        }
+                    templateUrl: './view/home/main.html'
                     }
                 })
-                .state('home.main', {
-                    url: '/home',
+                .state('main.entry', {
+                    url: '/entry',
                     abstract: true,
                     views: {
                         'homeMain': {
-                            templateUrl: './view/home/main.html',
-                            controller: 'homeCtrl'
+                            templateUrl: './view/home/entry.html',
+                            controller: 'home.entryCtrl'
                         }
                     }
                 })
