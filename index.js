@@ -8,7 +8,7 @@ angular.module('appModule', ['ngAnimate', 'ui.router', 'ngSanitize', 'pascalprec
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home/main');
-            $stateProvider.state('main', {
+            $stateProvider.state('main', { 
                     url: '/main',
                     abstract: true,
                     templateUrl: './view/home/main.html'
