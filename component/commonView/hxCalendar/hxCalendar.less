@@ -1,0 +1,159 @@
+
+//日历中的输入框的高度
+@hxCalInputHeight:25px;
+//日历中的单元格的尺寸
+@hxCalCellSize:35px;
+//日历的宽度
+@hxCalWidth:@hxCalCellSize*7;
+
+.hxCalPopArrowEx{
+    width: 15px;
+    height: 6px;
+    margin: auto;
+    position: relative;
+    z-index: @midZIndex;
+    margin-bottom: -2px;
+    .hxCalPopArrowOut{
+        border-width: 0px 7.5px 6px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: transparent transparent white;
+        position: absolute;
+        top: 1px;
+        left: 0px;
+    }
+    .hxCalPopArrowIn{
+        border-width: 0px 7.5px 6px;
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: transparent transparent @grayColorOfBorder;
+        position: absolute;
+        top: -1px;
+        left: 0px;
+    }
+}
+.hxCal{
+    width: @hxCalWidth;
+    .backgroundWhite;
+    padding: 0px @normalPadding;
+    font-size: @xs-text;
+    box-sizing: content-box;
+    .border;
+    .hxShadow;
+    border-radius: @borderRadius;
+    position: relative;
+    .hxCalInputArea{
+        padding: @normalPadding 0;
+        .hxCalInput{
+            width: 45%;
+            float: left;
+            line-height: @hxCalInputHeight;
+            height: @hxCalInputHeight;
+        }
+        .hxCalSeparator{
+            float: left;
+            width: 10%;
+            height: @hxCalInputHeight;
+            padding: 0px @smlPadding;
+            .line{
+                margin-top: @hxCalInputHeight/2;
+                .border;
+                border-top: 0px;
+            }
+        }
+        &:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+    .hxCalTitle{
+        height:@hxCalInputHeight;
+        box-sizing: content-box;
+        padding: @smlPadding 0px;
+        .hxCalDirect{
+            float: left;
+            width: 30%;
+            height: 100%;
+            line-height: @hxCalInputHeight;
+            .hand;
+        }
+        .toleft{
+            .hxCalDirect;
+            text-align: right;
+            padding-right: @normalPadding;
+            background: url(../image/icon_small_arrow_left.png) no-repeat right center;
+        }
+        .toright{
+            .hxCalDirect;
+            text-align: left;
+            padding-left: @normalPadding;
+            background: url(../image/icon_small_arrow_right.png) no-repeat left center;
+        }
+        .cur{
+            float: left;
+            width: 40%;
+            height: 100%;
+            text-align: center;
+            line-height: @hxCalInputHeight;
+            font-size: @sm-text;
+            font-weight: bold;
+        }
+        &:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+    .hxCalBody{
+        padding: @smlPadding 0px;
+        .hxCalCell{
+            width: @hxCalCellSize;
+            height: @hxCalCellSize;
+            float: left;
+            text-align: center;
+            line-height: @hxCalCellSize;
+            .hand;
+            &:hover{
+                .backgroundGray;
+            }
+            &:active{
+                .backgroundMoreGray;
+            }
+        }
+        .selectedDay{
+            .backgroundMoreGray !important;
+        }
+        .activeDay{
+            .backgroundBlue !important;
+            .hxWhite !important;
+        }
+        &:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+    }
+    .hxCalSearch{
+        text-align: center;
+        padding: @normalPadding 0px;
+    }
+}
+.hxCalFrame.ng-animate{
+    .transition;
+    transition-property: opacity;
+}
+.hxCalFrame.ng-enter{
+    opacity: 0;
+}
+.hxCalFrame.ng-enter-active{
+    opacity: 1;
+}
+.hxCalFrame.ng-leave{
+    opacity: 1;
+}
+.hxCalFrame.ng-leave-active{
+    opacity: 0;
+}

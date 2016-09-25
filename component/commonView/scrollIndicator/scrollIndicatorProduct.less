@@ -1,0 +1,22 @@
+@scrollIndicatorWidth:31px;
+@scrollIndicatorPointSize:14px;
+.scrollIndicator{
+    width: @scrollIndicatorWidth;
+    position: relative;
+    .arrow{
+        width: @scrollIndicatorWidth;
+        .hand;
+    }
+    .pointitem{
+         position: relative;
+         width: @scrollIndicatorPointSize;
+         margin: 0px (@scrollIndicatorWidth - @scrollIndicatorPointSize)/2;
+
+    }
+    .pointitem:first-of-type{
+        margin-top: 20px;
+    }
+    .pointitem:last-of-type{
+        margin-bottom: 20px;
+    }
+}

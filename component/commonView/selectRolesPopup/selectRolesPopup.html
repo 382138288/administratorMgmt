@@ -1,0 +1,22 @@
+<div class="left-part">
+    <div id="role-search" class="role-search">
+        <input type="text" ng-model="$ctrl.searchContent" placeholder="请输入角色名称" ng-keypress="$ctrl.keypress($event)">
+        <img src="./asset/image/icon_project_search_big.png" alt="" ng-click="$ctrl.filterRoles()">
+    </div>
+    <div class="card-table" style="{{css}}">
+        <card-table datalist="$ctrl.datalist" selected-map="$ctrl.selectedMapCopy" on-click="onClickCard($ctrl.selectedMapCopy)" card-width="150px"
+                    card-height="50px" id="roleId" name="roleName" is-selectable="true"></card-table>
+    </div>
+</div>
+<div class="right-part">
+    <div class="right-part-title">
+        已选角色
+    </div>
+    <div class="deletable-tag" style="{{css}}">
+        <deletable-tag is-deleteable="true" selected-map="$ctrl.selectedMapCopy"></deletable-tag>
+    </div>
+</div>
+<div id="popup-footer" class="popup-footer">
+    <button class="hxButton backgroundYellow hxWhite" style="margin-right:10px" ng-click="save()">确 定</button>
+    <button class="hxButton" style="background:transparent" ng-click="cancel()">取 消</button>
+</div>

@@ -1,0 +1,14 @@
+<div class="hxPopupFrame" ng-if="show" ng-click="hide()">
+    <div class="hxPopup" style="{{css}}" ng-click="prevent($event)">
+        <!-- <div style="position:relative"> -->
+            <div class="hxPopupHead">
+                <div class="hxPopupTitle">{{ptitle}}</div>
+                <div class="hxPopupClose">
+                    <img src="./asset/image/pop_close.png" alt="" ng-click="hide()">
+                </div>
+            </div>
+            <div class="hxPopupBody" ng-transclude></div>
+        <!-- </div> -->
+        
+    </div>
+</div>

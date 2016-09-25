@@ -1,0 +1,36 @@
+<div class="homeContainer">
+    <div class="home">
+        <div class="homeicon" style="float:left;" ng-click="goHome()">
+        </div>
+        <div class="smlAvater" style="float:left">
+            <img id="avatar" src="./asset/image/default_avatar.png" alt="">
+            <div class="drop_menu">
+                <i class="ico-jt"></i>
+                <div>
+                    <font style=" display:block; margin-top:20px;">
+                        <span ng-bind="currentUserName">徐一白</span>&nbsp;
+                        <span ng-bind="currentUserOrg">内控中心</span>
+                    </font>
+                    <p ng-click="goAccount()" style="margin-top:16px;">
+                        <img src="asset/image/myseting.png" class="icon_img" style="margin-right:10px;" /> 我的账户
+                    </p>
+                    <p ng-click="goLanguageConfiguration()"><img src="asset/image/email_pressed.png" style="margin-right:10px;" class="icon_img" /> 语言设置
+                    </p>
+                    <p ng-click="goServiceListConfig()">
+                        <img src="asset/image/systemset.png" style="margin-right:10px;" class="icon_img" /> 系统设置
+                    </p>
+                    <p ng-click="goNewsList()">
+                        <img src="asset/image/email_pressed.png" style="margin-right:10px;" class="icon_img" /> 信息维护
+                    </p>
+                    <p ng-click="gorbac()" ><!-- ng-if="authority.securitymgmt" -->
+                        <img src="asset/image/company_icon.png" style="margin-right:10px;" class="icon_img" />权限管理
+                    </p>
+                    <button style="width:90px; height:30px; background-color:#fbb94d; color:#fff; border:none; outline:none; border-radius:3px;">安全退出
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-transclude class="homeTitle">
+    </div>
+</div>

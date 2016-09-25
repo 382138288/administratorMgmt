@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        uiTreeApi
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+</head>
+<style>
+    *{margin:0;padding:0;}
+    body{ font-family: "Microsoft YaHei"; color: #444; background: #f7f8f9; }
+    .wapper{ width: 920px;margin:20px auto; padding:40px; background: #fff;}
+    h1{ font-size:24px; line-height: 40px; text-align: center; margin:20px 0;}
+    h2{ font-size: 20px; line-height: 34px; margin:20px 0; }
+    h3{ font-size: 16px; line-height: 28px; margin:20px 0; }
+    .codeText{ font-size: 12px; font-family: "Consolas"; padding:10px; border:1px solid #ccc; background: #dfdfdf; }
+    p{text-indent: 2em; line-height: 24px; font-size: 14px; margin:10px 0px;}
+    ul{ padding:0 20px; font-size: 14px; margin:10px 0px;}
+    ul li{ line-height: 28px; }
+</style>
+<body>
+    <div class="wapper">
+        <h1>uiTree API</h1>
+        <div class="codeText">
+            <ui-tree tree-data="data" conf="treeConf" clickitem="clickNode(node)" selected-tree="selectedNode"></ui-tree>
+        </div>
+        <h2>tree-data</h2>
+        <p>tree-data参数传入原始数据。原始数据规范如下：</p>
+        <ul>
+            <li>原始数据必须是一个array数组。</li>
+            <li>数组中存放每个节点的object对象。</li>
+            <li>每个节点中必须有id和pId（parentId）属性，对应节点的结构。</li>
+            <li>节点对象不限制有其他任何类型的属性。</li>
+            <li>节点显示的节点名默认使用节点的name属性，可在conf中配置（具体参照conf中label配置项）。</li>
+        </ul>
+        <h2></h2>
+
+    </div>
+    <script type="text/javascript">
+        var objs=document.querySelectorAll(".codeText");
+        for(var i=0;i<objs.length;i++){
+            objs[i].innerHTML=objs[i].innerHTML.replace(/</,'&lt;').replace('>','&gt;');
+        };
+    </script>
+</body>
+</html>

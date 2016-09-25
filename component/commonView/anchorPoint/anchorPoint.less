@@ -1,0 +1,69 @@
+@scrollIndicatorWidth: 31px;
+@scrollIndicatorPointSize: 14px;
+@scrollIndicatorLineWidth: 2px;
+@scrollIndicatorBubbleWidth: 125px;
+@scrollIndicatorBubbleHeight: 34px;
+@scrollIndicatorLineHeight: 30px;
+.anchorPoint {
+    width: @scrollIndicatorWidth;
+    position: fixed;
+    right: 30px;
+    top: 200px;
+    .arrow {
+        width: @scrollIndicatorWidth;
+        cursor: pointer;
+    }
+    .anchorPoint_item {
+        position: relative;
+        width: @scrollIndicatorPointSize;
+        margin: 0px (@scrollIndicatorWidth - @scrollIndicatorPointSize)/2;
+        .point {
+            width: @scrollIndicatorPointSize;
+            height: @scrollIndicatorPointSize;
+            border-radius: 50%;
+            .backgroundMoreGray;
+            cursor: pointer;
+            border: 2px solid white;
+            &:active,
+            &:hover {
+                .backgroundBlue;
+            }
+        }
+        .bubble {
+            display: none;
+            background: url(../image/fu_onbg1.png) no-repeat center center;
+            width: @scrollIndicatorBubbleWidth;
+            height: @scrollIndicatorBubbleHeight;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: -@scrollIndicatorBubbleWidth;
+            margin-top: -(@scrollIndicatorBubbleHeight/2-@scrollIndicatorPointSize/2);
+            line-height: @scrollIndicatorBubbleHeight;
+            text-align: center;
+        }
+        .line {
+            width: @scrollIndicatorLineWidth;
+            margin: 0 (@scrollIndicatorPointSize - @scrollIndicatorLineWidth)/2;
+            .backgroundMoreGray;
+            height: @scrollIndicatorLineHeight;
+        }
+    }
+    .anchorPoint_item:first-of-type {
+        margin-top: 20px;
+    }
+    .anchorPoint_item:last-of-type {
+        margin-bottom: 20px;
+        .line {
+            display: none;
+        }
+    }
+    .anchorPoint_item.active{
+        .bubble {
+            display: block;
+        }
+        .point {
+            .backgroundBlue;
+        }
+    }
+}

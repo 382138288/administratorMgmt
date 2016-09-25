@@ -1,0 +1,65 @@
+@directionSize: @smlAvaterSize;
+@homeIconSize: 20px;
+@homeClientDetailTopbarLineHeight: 25px;
+.left-side-bar {
+  width: @homeClientDetailTabbarWidth;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  .backgroundWhite;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 30px 0px;
+  .tabbarItem {
+    text-align: center;
+    padding: @bigPadding;
+    cursor: pointer;
+    border-right: 5px solid @transparent;
+    .des {
+      font-size: @smlFontSize;
+      padding: @smlPadding;
+    }
+    &:hover {
+      .backgroundGray;
+    }
+  }
+
+  .active {
+    .backgroundDarkGray;
+    border-right: 5px solid @prettyYellow;
+  }
+
+  .up-arrow {
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: url(../image/i_up.png) no-repeat center center;
+    .backgroundWhite;
+    .hand;
+    z-index: @midZIndex;
+    &:hover {
+      .backgroundGray;
+    }
+  }
+  .down-arrow {
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: url(../image/i_down.png) no-repeat center center;
+    .backgroundWhite;
+    .hand;
+    z-index: @midZIndex;
+    &:hover {
+      .backgroundGray;
+    }
+  }
+  .mActive {
+    border-right: @prettyYellow 4px solid;
+    .backgroundDarkGray;
+  }
+}

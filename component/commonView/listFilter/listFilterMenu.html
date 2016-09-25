@@ -1,0 +1,15 @@
+<div class="filterMenu" ng-if="show" ng-click="preventBubble($event)">
+    <div class="hxCalPopArrow"></div>
+    <div class="filterMenuItem" ng-repeat="item in items.listStyle track by $index" ng-click="onItemClick($event,item)">
+        <div class="filterMenuIcon">
+            <img ng-src="{{item.img}}" alt="" ng-if="item.img" />
+        </div>
+        <div class="filterMenuDes">{{item.displayname}}</div>
+        <div class="filterMenuChecked" ng-if="item.selected">
+            <img src="asset/image/state_chenggong.png" alt="">
+        </div>
+    </div>
+    <div class="filterMenuButtons">
+        <button class="hxButton backgroundYellow hxWhite" ng-click="search($event)">检索</button>
+    </div>
+</div>

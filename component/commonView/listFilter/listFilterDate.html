@@ -1,0 +1,35 @@
+<div class="hxCalPopArrow" ng-if="$ctrl.show">
+        <div class="hxCalPopArrowIn"></div>
+        <div class="hxCalPopArrowOut"></div>
+    </div>
+<div class="hxCal" ng-if="$ctrl.show" style="{{$ctrl.css}}" ng-click="$ctrl.preventBubble($event)">
+    <div class="hxCalInputArea">
+        <input type="text" ng-model="$ctrl.data.formDate" class="hxInput hxCalInput" placeholder="年-月-日" ng-focus="$ctrl.selectStart(true)">
+        <div class="hxCalSeparator">
+            <div class="line"></div>
+        </div>
+        <input type="text" ng-model="$ctrl.data.toDate" class="hxInput hxCalInput" placeholder="年-月-日" ng-focus="$ctrl.selectEnd(true)">
+    </div>
+    <div class="hxCalTitle">
+        <div class="toleft" ng-click="$ctrl.toleft()">
+        </div>
+        <div class="cur">{{$ctrl.cur.getFullYear()}}-{{$ctrl.cur.getMonth()+1}}</div>
+        <div class="toright" ng-click="$ctrl.toright()">
+        </div>
+    </div>
+    <div class="hxCalBody">
+        <div class="hxCalCell">MON</div>
+        <div class="hxCalCell">TUE</div>
+        <div class="hxCalCell">WED</div>
+        <div class="hxCalCell">THU</div>
+        <div class="hxCalCell">FRI</div>
+        <div class="hxCalCell">SAT</div>
+        <div class="hxCalCell">SUN</div>
+        <div ng-repeat="day in $ctrl.days" class="hxCalCell" ng-click="$ctrl.selectDay(day)" ng-class="{hxTip:day.getMonth()!=$ctrl.cur.getMonth(),'activeDay':$ctrl.isEqual($ctrl.now,day),backgroundDarkGray:$ctrl.isEqual($ctrl.touched,day)}">
+            {{day.getDate()}}
+        </div>
+    </div>
+    <div class="hxCalSearch">
+        <input type="button" class="hxButton backgroundYellow hxWhite" value="检索" ng-click="$ctrl.search($event)">
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+    <div class="hxCalTitle">
+        <div class="toleft" ng-click="$ctrl.toleft()">
+        </div>
+        <div class="cur">{{$ctrl.cur.getFullYear()}}-{{$ctrl.cur.getMonth()+1}}</div>
+        <div class="toright" ng-click="$ctrl.toright()">
+        </div>
+    </div>
+    <div class="hxCalBody">
+        <div class="hxCalCell">MON</div>
+        <div class="hxCalCell">TUE</div>
+        <div class="hxCalCell">WED</div>
+        <div class="hxCalCell">THU</div>
+        <div class="hxCalCell">FRI</div>
+        <div class="hxCalCell">SAT</div>
+        <div class="hxCalCell">SUN</div>
+        <div ng-repeat="day in $ctrl.days" class="hxCalCell" ng-click="$ctrl.selectDay(day)" ng-class="{hxTip:day.getMonth()!=$ctrl.cur.getMonth(),'activeDay':$ctrl.isEqual($ctrl.now,day),selectedDay:$ctrl.isEqual($ctrl.touched,day)}">
+            {{day.getDate()}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div id="cardTable">
+    <div ng-if="myNgIf(item)" ng-repeat="item in datalist track by $index">
+        <div ng-class="{selected:selectedMap.get([item[id]])!=undefined, normal:selectedMap.get([item[id]])==undefined}"
+             ng-click="click(item[id], item[name])" style="cursor: pointer; width:{{cardWidth}}; height:{{cardHeight}}; line-height: {{cardHeight}};">
+            {{item[name]}}
+            <img ng-if="selectedMap.get([item[id]])!=undefined" src="./asset/image/news_people_select.png">
+        </div>
+    </div>
+</div>

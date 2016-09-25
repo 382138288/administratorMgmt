@@ -1,0 +1,10 @@
+<div class="scrollIndicator">
+    <img src="./asset/image/right_up.png" alt="" class="arrow" ng-click="prev()">
+    <div class="pointitem" ng-repeat="point in points track by $index">
+        <div class="point" ng-class="{active:$index==curIndex}" ng-click="scrollTo($index)"></div>
+        <div class="bubble" ng-if="curIndex==$index">{{point}}</div>
+        <div class="line" ng-if="$index!=points.length-1"></div>
+    </div>
+    <img src="./asset/image/right_down.png" alt="" class="arrow" ng-click="next()">
+    
+</div>

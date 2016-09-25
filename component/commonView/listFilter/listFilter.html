@@ -1,0 +1,18 @@
+    <div class="hxTHead">
+        <div class="hxTHeadItem" style="width:{{item.width}}" ng-repeat="item in list track by $index">
+            <div class="hxTitle" ng-click="showFilter($event,item)" ng-show="!item.filterShow" ng-class="{fontblue:filterData[item.column]}">
+                {{item.name}}
+                <img class="icon" ng-if="item.filterType=='value'" ng-src="{{filterData[item.column]|imghover:'asset/image/search_icon.png'}}" alt="">
+                <img class="icon" ng-if="item.filterType=='list'" ng-src="{{filterData[item.column]|imghover:'asset/image/i_down.png'}}" alt="">
+                <img class="icon" ng-if="item.filterType=='date'" ng-src="{{filterData[item.column]|imghover:'asset/image/list-date_icon.png'}}" alt="">
+            </div>
+            <div class="hxTitleInput" ng-if="item.filterType=='value'" ng-show="item.filterShow" ng-click="stopevent($event)">
+                <input placeholder="请输入信息名称" type="text" ng-model="filterData[item.column]" ng-keypress="newsSearch($event,item)">
+                <img ng-src="{{filterData[item.column]|imghover:'asset/image/search_icon.png'}}" style="position:absolute;top:8px;right:10px" alt="" ng-click="onSelectSearch(item)">
+            </div>
+            <list-filter-menu ng-if="item.filterType=='list'" data="filterData[item.column]" show="item.filterShow2" stopevent="stopevent($event)" items="item" on-search="onSelectSearch(item)"></list-filter-menu>
+            <list-filter-date ng-if="item.filterType=='date'" data="filterData[item.column]" on-search="onSelectSearch(item)" stopevent="stopevent($event)" css="item.style" items="item" show="item.filterShow2"></list-filter-date>
+        </div>
+    </div>
+    
+

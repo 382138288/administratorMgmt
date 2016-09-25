@@ -1,0 +1,9 @@
+<div class="dateInputFrame">
+    <input type="text" class="dateInputAction hxInput">
+    <div class="dateInputCalCon" tabindex="-1" ng-blur="onBlur()">
+        <img class="dateInputImg" ng-click="toggleCal()" src="./asset/image/news_dateinput.png" alt="">
+        <div class="dateInputCal">
+            <hx-calendar-single show="show" on-select-day="selectDay(day)"></hx-calendar-single>
+        </div>
+    </div>
+</div>

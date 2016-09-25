@@ -1,0 +1,54 @@
+/* LESS Document */
+.communList {
+  overflow: hidden;
+}
+.communList .line {
+  width: 96%;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.communList .line h4 {
+  border-bottom: 1px solid #f99b00;
+  line-height: 35px;
+  width: 70px;
+  font-size: 14px;
+  text-align: center;
+}
+.communList .tall {
+  width: 200px;
+  height: 100px;
+  background: #fff;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+  float: left;
+  margin-left: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.communList .tall b,
+.communList .tall span {
+  display: block;
+  line-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.communList .tall b img,
+.communList .tall span img {
+  margin-right: 10px;
+}
+.communList .tall b {
+  line-height: normal;
+  height: 32px;
+  white-space: normal;
+}
+.communList .times {
+  width: 100px;
+  margin: 10px 0 10px 2%;
+}
+.communList .times select {
+  width: 100%;
+}

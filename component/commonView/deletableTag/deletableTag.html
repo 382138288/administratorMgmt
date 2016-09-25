@@ -1,0 +1,5 @@
+<span id="{{key}}" ng-repeat="(key,value) in selectedMap.container" class="shake-rotate"
+     style="margin-left:{{tagMarginLeft}}; margin-top:{{tagMarginTop}}; padding:{{tagPadding}}">
+    {{value}}
+    <img ng-if="myNgIf()" ng-click="deleteTag(key)" src="./asset/image/close.png">
+</span>

@@ -1,0 +1,22 @@
+<div class="left-part">
+    <div id="tree-switch" class="tree-switch">
+        <span class="text_span" ng-class="{active:treeStatus}" ng-click="openOrgTree()"><font>全部展开</font></span>
+        <span class="text_span" ng-class="{active:!treeStatus}" ng-click="closeOrgTree()"><font>全部闭合</font></span>
+        <span></span>
+    </div>
+    <div class="tree" style="{{css}}">
+        <ui-tree tree-data="$ctrl.orgData" conf="orgConf" clickitem="clickOrg(item)" clickitems="clickitems" selected-tree="selectedOrg"></ui-tree>
+    </div>
+</div>
+<div class="right-part">
+    <div class="right-part-title">
+        已选部门
+    </div>
+    <div class="deletable-tag" style="{{css}}">
+        <deletable-tag is-deleteable="true" selected-map="$ctrl.selectedMapCopy" on-delete="onDelete(key)"></deletable-tag>
+    </div>
+</div>
+<div id="popup-footer" class="popup-footer">
+    <button class="hxButton backgroundYellow hxWhite" style="margin-right:10px" ng-click="save()">确 定</button>
+    <button class="hxButton" style="background:transparent" ng-click="cancel()">取 消</button>
+</div>

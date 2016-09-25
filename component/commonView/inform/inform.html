@@ -1,0 +1,14 @@
+<div class="inform_wrap">
+    <div ng-click="$ctrl.toggleShow()">
+        <img src="./asset/image/inform_close.png" ng-if="!$ctrl.owlopen" />
+        <img src="./asset/image/inform_open.png" ng-if="$ctrl.owlopen" />
+    </div>
+    <div class="inform_detail" ng-class="{inform_enlarge:$ctrl.enlarge,inform_shrink:!$ctrl.enlarge}">
+        <span ng-click="$ctrl.gointernalcomm('100100')"><img src="./asset/image/inform_01.png" alt="" />审批单<i>{{$ctrl.inform.approval}}</i></span>
+        <span ng-click="$ctrl.gointernalcomm('100101')"><img src="./asset/image/inform_02.png" alt="" />联系单<i>{{$ctrl.inform.contact}}</i></span>
+        <span ng-click="$ctrl.gointernalcomm('100102')"><img src="./asset/image/inform_03.png" alt="" />任务单<i>{{$ctrl.inform.task}}</i></span>
+        <!-- <span><img src="../../asset/image/inform_04.png" alt="" />待审批<i>2</i></span> -->
+        <!-- <span><img src="../../asset/image/inform_05.png" alt="" />当日新增<i>99</i></span> -->
+
+    </div>
+</div>

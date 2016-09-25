@@ -1,0 +1,42 @@
+@dateInputHeight:35px;
+@dateInputImgSize:20px;
+.dateInputFrame{
+    position: relative;
+    height: @dateInputHeight;
+    input{
+        line-height: @dateInputHeight - 2 ;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 0px;
+        padding-right: @dateInputHeight;
+        padding-left: @smlPadding;
+    }
+    .dateInputCalCon{
+        height: @dateInputHeight;
+        width: @dateInputHeight;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        &:focus{
+            outline: none;
+        }
+        img{
+            width: @dateInputImgSize;
+            height: @dateInputImgSize;
+            margin-top: (@dateInputHeight - @dateInputImgSize)/2;
+            margin-left: (@dateInputHeight - @dateInputImgSize)/2;
+            .hand;
+            vertical-align: baseline;
+        }
+        
+        .dateInputCal{
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            margin-left:-117px;
+            display: inline-block;
+            z-index: @midZIndex;
+        }
+    }
+}

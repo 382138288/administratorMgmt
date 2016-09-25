@@ -1,0 +1,10 @@
+
+<div class="anchorPoint" style="{{style}}">
+    <img src="asset/image/right_up.png" alt="" class="arrow" ng-click="toUp()" />
+    <div class="anchorPoint_item" ng-class="{active:$index==0}" ng-repeat="item in anchorList track by $index">
+        <div class="point" ng-click="scroll($index)"></div>
+        <div class="bubble">{{item.name}}</div>
+        <div class="line"></div>
+    </div>
+    <img src="asset/image/right_down.png" alt="" class="arrow" ng-click="toDown()">
+</div>

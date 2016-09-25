@@ -1,0 +1,39 @@
+#cardTable {
+  .normal {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 60px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    &:hover {
+      -moz-box-shadow: 5px 5px 5px #888888;
+      box-shadow: 2px 2px 5px #888888;
+    }
+  }
+
+  .selected {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    position: relative;
+    text-align: center;
+    background-color: #ffffff;
+    background-color: #ffffff;
+    border: 1px solid rgba(59, 192, 195, 1);
+    &:hover {
+      -moz-box-shadow: 5px 5px 5px #888888;
+      box-shadow: 2px 2px 5px #888888;
+    }
+    img {
+      position: absolute;
+      right: -8px;
+      top: -8px;
+      display: inherit;
+    }
+  }
+}

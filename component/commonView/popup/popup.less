@@ -1,0 +1,100 @@
+@hxPopupBackground: rgba(255, 255, 255, 0.5);
+@hxPopupHeadHeight:50px;
+@hxPopupCloseBtn:23px;
+.hxPopupFrame {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background: @hxPopupBackground;
+  z-index: 6;
+  .hxPopup {
+    .hxShadow;
+    .backgroundWhite;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    .border;
+    .hxPopupHead{
+      height: @hxPopupHeadHeight;
+      .hxPopupTitle{
+        width: 80%;
+        height: 100%;
+        float: left;
+        box-sizing: border-box;
+        line-height: @hxPopupHeadHeight;
+        padding-left: @bigMargin;
+        .hxMd;
+      }
+      .hxPopupClose {
+        width: 20%;
+        float: right;
+        box-sizing: border-box;
+        img {
+          float: right;
+          width: @hxPopupCloseBtn;
+          height: @hxPopupCloseBtn;
+          margin: (@hxPopupHeadHeight - @hxPopupCloseBtn)/2;
+          .hand;
+          opacity: 0.8;
+          &:hover {
+            opacity: 0.9;
+          }
+          &:active {
+            opacity: 1;
+          }
+        }
+      }
+      &:after {
+        display: block;
+        content: "";
+        clear: both;
+      }
+    }
+    
+    .hxPopupBody{
+      position: absolute;
+      left: 0px;
+      top: @hxPopupHeadHeight;
+      right: 0px;
+      bottom: 0px;
+      overflow: auto;
+    }
+  }
+  
+}
+
+.hxPopupFrame.ng-animate {
+  .transition;
+  .transitionProperty(opacity);
+  .hxPopup {
+    .transition;
+    .transitionProperty(transform);
+  }
+}
+
+.hxPopupFrame.ng-enter {
+  opacity: 0;
+  .hxPopup {
+    .transform(scale3d(0.8, 0.8, 1));
+  }
+}
+
+.hxPopupFrame.ng-enter-active {
+  opacity: 1;
+  .hxPopup {
+    .transform(scale3d(1, 1, 1));
+  }
+}
+
+.hxPopupFrame.ng-leave {
+  opacity: 1;
+}
+
+.hxPopupFrame.ng-leave-active {
+  opacity: 0;
+  .hxPopup {
+    .transform(scale3d(0.8, 0.8, 1));
+  }
+}

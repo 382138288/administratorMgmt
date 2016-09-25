@@ -1,0 +1,11 @@
+<div id="popup-header" class="popup-header"></div>
+<div class="ui-box-body">
+    <div ron-carousel carouse="carousel" speed='20'
+         carousel-style="position: absolute;width: 95%; margin-left:16px;height: 42px;overflow: hidden;left: 0;background: #fff;top: 5px;padding: 0 14px;">
+        <a ng-click="selectAppName($index)" ng-class="{active:current==$index}" ng-repeat="auth in auths">{{auth.appName}}</a>
+    </div>
+    <div class="ui-box-body-center" style="{{css}}">
+        <ui-tree tree-data="authData" conf="authConf" clickitem="clickOrg(item)" selected-tree="selectedOrg"></ui-tree>
+    </div>
+</div>
+<div id="popup-footer" class="popup-footer" style="background-color: #ffffff;height: 40px"></div>

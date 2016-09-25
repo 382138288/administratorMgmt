@@ -1,0 +1,101 @@
+@scrollIndicatorWidth:31px;
+@scrollIndicatorPointSize:14px;
+@scrollIndicatorLineWidth:2px;
+@scrollIndicatorBubbleWidth:125px;
+@scrollIndicatorBubbleHeight:34px;
+@scrollIndicatorLineHeight:30px;
+.scrollIndicator{
+    width: @scrollIndicatorWidth;
+    position: relative;
+    .arrow{
+        width: @scrollIndicatorWidth;
+        .hand;
+    }
+    .pointitem{
+         position: relative;
+         width: @scrollIndicatorPointSize;
+         margin: 0px (@scrollIndicatorWidth - @scrollIndicatorPointSize)/2;
+        .point{
+            width: @scrollIndicatorPointSize;
+            height: @scrollIndicatorPointSize;
+            border-radius: @scrollIndicatorPointSize/2;
+            .backgroundMoreGray;
+            .hand;
+            border: 2px solid white;
+            &:active,&:hover{
+                .backgroundBlue;
+            }
+        }
+        
+        .bubble{
+            background: url(../image/fu_onbg1.png) no-repeat center center;
+            width: @scrollIndicatorBubbleWidth;
+            height: @scrollIndicatorBubbleHeight;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: -@scrollIndicatorBubbleWidth;
+            margin-top: -(@scrollIndicatorBubbleHeight/2-@scrollIndicatorPointSize/2);
+            line-height: @scrollIndicatorBubbleHeight;
+            text-align: center;
+        }
+        .line{
+            width: @scrollIndicatorLineWidth;
+            margin:0 (@scrollIndicatorPointSize - @scrollIndicatorLineWidth)/2;
+            .backgroundMoreGray;
+            height: @scrollIndicatorLineHeight;
+        }
+        .active{
+            .backgroundBlue;
+        }
+    }
+    .pointitem:first-of-type{
+        margin-top: 20px;
+    }
+    .pointitem:last-of-type{
+        margin-bottom: 20px;
+    }
+    
+    
+}
+
+.horizonScrollContainer{
+    @horizonScrollContainerHeight:200px;
+    @horizonScrollContainerHandlerWidth:30px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    .hxHandler{
+        height: 100%;
+        .backgroundWhite;
+        width: @horizonScrollContainerHandlerWidth;
+        background-repeat: no-repeat;
+        background-position: center center;
+        .hand;
+        &:hover{
+            .backgroundGray;
+        }
+        &:active{
+            .backgroundDarkGray;
+        }
+    }
+    .hxLeft{
+        float: left;
+        .hxHandler;
+        background-image: url(../image/left.png);
+    }
+    .hxRight{
+        float: right;
+        .hxHandler;
+        background-image: url(../image/right.png);
+    }
+    .hxBody{
+        overflow: hidden;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: @horizonScrollContainerHandlerWidth;
+        right: @horizonScrollContainerHandlerWidth;
+        bottom: 0px;
+    }
+}

@@ -1,0 +1,41 @@
+<div class="left-part">
+    <div id="role-list" class="role-list" style="{{css}}">
+        <div ng-class="{'role-item-selected': currentIndex == $index, 'role-item-normal':currentIndex != $index}"
+             ng-click="clickRoleItem($index, role)"
+             ng-repeat="role in $ctrl.roles track by $index">
+            {{role.roleName}}
+            <img ng-if="currentIndex == $index" src="./asset/image/news_people_select.png">
+        </div>
+
+        <div style="margin:0 8%; border-top: 1px solid #dddddd;"></div>
+    </div>
+</div>
+<div class="right-part">
+    <div class="right-part-title">
+        <span class="text_span" ng-class="{active:tabStatus=='fn'}" ng-click="openFnTab()"><font>功能权限</font></span>
+        <span class="text_span" ng-class="{active:tabStatus=='data'}" ng-click="openDataTab()"><font>数据权限</font></span>
+    </div>
+    <div ng-show="tabStatus=='fn'" class="ui-box-body">
+        <div ron-carousel carouse="fn" speed='20' carousel-style="margin:0 20px;height: 42px;overflow: hidden;left: 0;background: #fff;top: 5px;padding: 0 14px;">
+            <a ng-click="selectedApp(app,$index)" ng-class="{active:current==$index}" ng-repeat="app in fnApps">{{app.displayName}}</a>
+        </div>
+        <div class="ui-box-body-center" style="{{css}}">
+            <div style="padding:0 20px">
+                <ui-tree tree-data="appRoleData" conf="appsConf" selected-tree="selectedAppRole"></ui-tree>
+            </div>
+        </div>
+    </div>
+
+    <div ng-show="tabStatus=='data'" class="ui-box-body">
+        <div ron-carousel carouse="data" speed='20' carousel-style="margin:0 20px;height: 42px;overflow: hidden;left: 0;background: #fff;top: 5px;padding: 0 14px;">
+            <a ng-click="selectedElm($index)" ng-class="{active:current==$index}" ng-repeat="app in dataApps">{{app.displayName}}</a>
+        </div>
+        <div class="ui-box-body-center" style="{{css}}">
+            <div ng-repeat="app in dataApps" ng-show="current==$index">
+                <card-table datalist="app.elements" filter="filter" card-width="150px" card-height="50px" id="name" name="displayName"></card-table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="popup-footer" class="popup-footer" style="background-color: #ffffff"></div>

@@ -1,0 +1,19 @@
+<div id="header">
+    <div id="headercontain">
+        <div class="logo">
+            <img src="./asset/image/logo.png" alt="ciicLogo">
+        </div>
+        <div class="searchbar">
+            <div style="float:left" class="searchSwitch" ng-click="switch()">
+                <img ng-if="isCompany" src="./asset/image/top_search_company.png" alt="">
+                <img ng-if="!isCompany" src="./asset/image/top_search_people.png" alt="">
+            </div>
+            <div class="search">
+                <input type="text" ng-model="searchContent" placeholder="{{placeholder}}" ng-keypress="keypress($event)">
+                <img src="./asset/image/icon_project_search_big.png" alt="" ng-click="sendKw()">
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>

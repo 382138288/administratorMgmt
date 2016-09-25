@@ -1,0 +1,4 @@
+<span id="select-tag" ng-repeat="item in datalist">
+    <span class="btn btn-xs" ng-click="select(item[id], item[name])"
+          ng-class="{selected:selectedTagMap.get([item[id]])!=undefined, normal:selectedTagMap.get([item[id]])==undefined}">{{item[name]}}</span>
+</span>

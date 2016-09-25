@@ -1,0 +1,22 @@
+<div class="hxTHead">
+    <div ng-repeat="item in vm.columns" class="hxTHeadItem" style="width:{{item.width}}">
+        <div class="hxTitle" ng-click="vm.onTitleShowChange($index)"
+             ng-if="vm.showTiltles[$index] || item.type==vm.columnType.enum || item.type ==vm.columnType.date || item.type== vm.columnType.operation ||item.type ==vm.columnType.click">
+            <img ng-if="item.type ==vm.columnType.click" class="icon" src="./asset/image/contact_new.png" src="" alt="">
+            {{item.name}}
+            <img ng-if="item.type==vm.columnType.enum" class="icon stateIcon" src="./asset/image/i_down.png" src="" alt="">
+            <img ng-if="item.type==vm.columnType.string" class="icon" src="./asset/image/search_icon.png" alt="">
+            <img ng-if="item.type ==vm.columnType.date" class="icon" src="./asset/image/list-date_icon.png" src="" alt="">
+        </div>
+        <filter-menu ng-if="item.type==vm.columnType.enum" show="!vm.showTiltles[$index]" items="item.filterDatasource" on-search="vm.onEnumSearch(items,$index)">
+        </filter-menu>
+        <div class="hxTitleInput" ng-if="!vm.showTiltles[$index] && item.type=='string'">
+            <input placeholder="请输入{{item.name}}" type="text" ng-keypress="vm.onStringSearch($event,$index)" ng-blur="vm.onTitleShowChange($index)"
+                   ng-model="vm.searchConditions[$index]">
+            <img ng-click="vm.onStringSearch($event,$index)" src="./asset/image/search_icon.png" style="position:absolute;top:8px;right:10px" alt="">
+        </div>
+        <hx-calendar-double ng-if="item.type ==vm.columnType.date" on-search="vm.onDateSearch(times,$index)" show="!vm.showTiltles[$index]">
+        </hx-calendar-double>
+
+    </div>
+</div>

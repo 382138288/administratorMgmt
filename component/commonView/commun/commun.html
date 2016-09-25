@@ -1,0 +1,17 @@
+<div class="communList" id="detailcmct">
+	<div class="line">
+		<h4>客户沟通</h4>
+    </div>
+    <div class="times">
+    	<select ng-model="dates" ng-show="time.length>0" ng-options="t for t in time" ng-change="yearChange()" class="form-control">
+        	<!--<option>-- 请选择 --</option>-->
+            <!--<option ng-repeat="t in time" ng-value="t.year">{{ t.year }}</option>-->
+        </select>
+    </div>
+    
+	<div ng-repeat="item in datalist" class="tall" ng-click="goDetail(item)">
+    	<b>{{ item.subject }}</b>
+        <span><img src="./asset/image/index_news_icon05.png" style="width:10px;" />沟通方式&nbsp;{{item.waymode | mapfilter_waymode:waymodes}}&nbsp;&nbsp;&nbsp;</span>
+        <span><img src="./asset/image/icon_clock.png" />沟通时间&nbsp;{{ item.contacttime | date:'yyyy-MM-dd' }}</span>
+    </div>
+</div>
