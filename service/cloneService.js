@@ -1,5 +1,5 @@
 ;(function(angular, _){
-	angular.module('appModule')
+	angular.module('routerApp')
     .factory('cloneservice',[function(){
 
     	var cloneArray = function(list){

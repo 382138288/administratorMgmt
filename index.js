@@ -1,28 +1,19 @@
-/**
- *  主文件
- *
- * Description
- */
-angular.module('appModule', [ 'ui.router', 'pascalprecht.translate'])
-    //路由配置
-    .config(['$stateProvider', '$urlRouterProvider',
-        function($stateProvider, $urlRouterProvider) {
-            $urlRouterProvider.otherwise('/main/entry');
-            $stateProvider.state('main', {
-                    url: '/main',
-                    views: {
-                        'viewMain': {
-                            templateUrl: './view/home/main.html'
-                        }
+var routerApp = angular.module('routerApp', ['ui.router','ngSanitize']);
+    routerApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/main/entry'); //mainwelcome maintradepasswdSet
+        $stateProvider
+            .state('main',{
+                url: '/main',
+                templateUrl: './view/home/main.html',
+                controller: 'mainCtrl'
+            })
+            .state('main.entry',{
+                url: '/entry',
+                views: {
+                    '': {
+                        templateUrl: './view/home/entry.html',
+                        controller: 'entryCtrl'
                     }
-                })
-                .state('main.entry', {
-                    url: '/entry',
-                    views: {
-                        'homeMain': {
-                            templateUrl: './view/home/entry.html'
-                        }
-                    }
-                })
-        }
-    ]);
+                }
+            })
+    }]);
